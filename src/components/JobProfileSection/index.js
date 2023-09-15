@@ -142,7 +142,7 @@ class JobProfileSection extends Component {
             placeholder="Search"
             value={searchInput}
             onChange={this.changeSearchInput}
-            onKeyDown={this.onEnterKey}
+            onKeyDown={this.onKeyDown}
           />
           <button
             type="button"
@@ -168,7 +168,7 @@ class JobProfileSection extends Component {
             placeholder="Search"
             value={searchInput}
             onChange={this.changeSearchInput}
-            onKeyDown={this.onEnterKey}
+            onKeyDown={this.onKeyDown}
           />
           <button
             type="button"
