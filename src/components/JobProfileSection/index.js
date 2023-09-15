@@ -71,7 +71,9 @@ class JobProfileSection extends Component {
 
     const jwtToken = Cookies.get('jwt_token')
     const {salaryRange, employmentType, searchInput} = this.state
-    const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType.join()}&minimum_package=${salaryRange}&search=${searchInput}`
+    const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType.join(
+      ',',
+    )}&minimum_package=${salaryRange}&search=${searchInput}`
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -81,7 +83,6 @@ class JobProfileSection extends Component {
     const response = await fetch(url, options)
     if (response.ok === true) {
       const data = await response.json()
-      console.log(data)
       const updatedData = data.jobs.map(eachJob => ({
         companyLogoUrl: eachJob.company_logo_url,
         employmentType: eachJob.employment_type,
@@ -124,6 +125,10 @@ class JobProfileSection extends Component {
     )
   }
 
+  searchButton = () => {
+    this.getJobDetails()
+  }
+
   renderJobDetails = () => {
     const {jobsList, searchInput} = this.state
     const jobsDisplay = jobsList.length > 0
@@ -143,7 +148,7 @@ class JobProfileSection extends Component {
             type="button"
             data-testid="searchButton"
             className="search-button"
-            onClick={this.getJobDetails}
+            onClick={this.searchButton}
           >
             <BsSearch className="search-icon" />
           </button>
@@ -187,6 +192,10 @@ class JobProfileSection extends Component {
     )
   }
 
+  retryJobDetails = () => {
+    this.getJobDetails()
+  }
+
   renderFailureView = () => (
     <div className="failure-container">
       <img
@@ -202,7 +211,7 @@ class JobProfileSection extends Component {
         type="button"
         data-testid="button"
         className="jobs-failure-button"
-        onClick={this.getJobDetails}
+        onClick={this.retryJobDetails}
       >
         Retry
       </button>

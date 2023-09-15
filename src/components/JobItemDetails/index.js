@@ -82,8 +82,7 @@ class JobItemDetails extends Component {
       const updatedSkillData = data.similar_jobs.map(eachSimilarJob =>
         this.getFormattedSkillData(eachSimilarJob),
       )
-      console.log(updatedData)
-      console.log(updatedSkillData)
+
       this.setState({
         jobItemList: updatedData,
         similarJobItemList: updatedSkillData,

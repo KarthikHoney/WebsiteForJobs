@@ -1,33 +1,44 @@
-.header-logo {
-  height: 30px;
-  width: 60px;
-}
-.header-container {
+.navbar-container {
+  background-color: #202020;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #232529;
-  background-size: cover;
-  width: 100%;
+  justify-content: space-between;
 }
-
-.unOrder-logout {
+.website-logo {
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+.header-list-items {
   list-style-type: none;
   display: flex;
-  padding: 5px;
-  font-size: 15px;
+  justify-content: center;
+  margin-right: 125px;
 }
-.list-items {
-  color: whitesmoke;
-  font-size: 13px;
-  padding-right: 5px;
+.listed {
+  list-style-type: none;
+}
+.home {
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Roboto';
+  font-weight: 500;
 }
 .logout-button {
-  color: aliceblue;
-  font-size: 14px;
-  background-color: darkgoldenrod;
-  border-radius: 4px;
+  background-color: #4f46e5;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-family: 'Roboto';
+  font-weight: 500;
   border: none;
-  cursor: pointer;
+  margin-right: 55px;
+  width: 110px;
+}
+.jon-heading {
+  margin-left: 40px;
+}
+.link-item {
+  text-decoration: none;
 }

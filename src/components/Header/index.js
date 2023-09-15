@@ -1,7 +1,5 @@
 import Cookies from 'js-cookie'
-
-import {Link, withRouter} from 'react-router-dom'
-
+import {withRouter, Link} from 'react-router-dom'
 import './index.css'
 
 const Header = props => {
@@ -12,28 +10,31 @@ const Header = props => {
   }
 
   return (
-    <div className="header-container">
+    <nav className="navbar-container">
       <div>
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-          alt="website logo"
-          className="header-logo"
-        />
-      </div>
-      <div className="unOrder-container">
-        <Link to="/" className="list-items">
-          Home
-        </Link>
-        <Link to="/jobs" className="list-items">
-          Jobs
+        <Link to="/" className="link-item">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+            alt="website logo"
+            className="website-logo"
+          />
         </Link>
       </div>
+      <ul className="header-list-items">
+        <Link to="/" className="link-item">
+          <li className="home-heading home">Home</li>
+        </Link>
+        <Link to="/jobs" className="link-item">
+          <li className="jon-heading home">Jobs</li>
+        </Link>
+      </ul>
       <div>
-        <button className="logout-button" type="button" onClick={onClickLogout}>
+        <button type="button" className="logout-button" onClick={onClickLogout}>
           Logout
         </button>
       </div>
-    </div>
+    </nav>
   )
 }
+
 export default withRouter(Header)
