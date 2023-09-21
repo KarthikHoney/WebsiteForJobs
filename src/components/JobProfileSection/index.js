@@ -135,24 +135,6 @@ class JobProfileSection extends Component {
 
     return jobsDisplay ? (
       <div className="details-container">
-        <div className="search-input">
-          <input
-            type="search"
-            className="search"
-            placeholder="Search"
-            value={searchInput}
-            onChange={this.changeSearchInput}
-            onKeyDown={this.onKeyDown}
-          />
-          <button
-            type="button"
-            data-testid="searchButton"
-            className="search-button"
-            onClick={this.searchButton}
-          >
-            <BsSearch className="search-icon" />
-          </button>
-        </div>
         <ul className="job-details-item-container">
           {jobsList.map(eachData => (
             <JobCard key={eachData.id} jobDetails={eachData} />
@@ -244,6 +226,24 @@ class JobProfileSection extends Component {
     return (
       <div className="job-details-container">
         <div className="render-group-items">
+          <div className="search-input">
+            <input
+              type="search"
+              className="search"
+              placeholder="Search"
+              value={searchInput}
+              onChange={this.changeSearchInput}
+              onKeyDown={this.onKeyDown}
+            />
+            <button
+              type="button"
+              data-testid="searchButton"
+              className="search-button"
+              onClick={this.searchButton}
+            >
+              <BsSearch className="search-icon" />
+            </button>
+          </div>
           <JobsFilterGroup
             employmentTypesList={employmentTypesList}
             salaryRangesList={salaryRangesList}

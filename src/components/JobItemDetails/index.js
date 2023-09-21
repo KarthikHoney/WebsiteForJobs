@@ -115,32 +115,37 @@ class JobItemDetails extends Component {
       <div className="full-job-item-container">
         <div className="job-items-container">
           <div className="logo-image-container">
-            <img
-              src={companyLogoUrl}
-              alt="job details company logo"
-              className="company-logo-justify"
-            />
-            <div className="title-container">
-              <h1 className="company-title-head">{title}</h1>
-              <div className="rating-container">
-                <AiFillStar className="star-icon" />
-                <p className="count-rating">{rating}</p>
+            <li className="dot_no">
+              <img
+                src={companyLogoUrl}
+                alt="job details company logo"
+                className="company-logo-justify"
+              />
+              <div className="title-container">
+                <h1 className="company-title-head">{title}</h1>
+                <div className="rating-container">
+                  <AiFillStar className="star-icon" />
+                  <p className="count-rating">{rating}</p>
+                </div>
               </div>
-            </div>
+            </li>
           </div>
           <div className="location-type-salary-container">
-            <div className="location-container">
-              <div className="responsive">
-                <GoLocation className="location-logo" />
-                <p className="location-desc">{location}</p>
+            <li className="dot_no">
+              <div className="location-container">
+                <div className="responsive">
+                  <GoLocation className="location-logo" />
+                  <p className="location-desc">{location}</p>
+                </div>
+                <div className="responsive">
+                  <BsBriefcaseFill className="location-logo-brief" />
+                  <p className="location-desc">{employmentType}</p>
+                </div>
               </div>
-              <div className="responsive">
-                <BsBriefcaseFill className="location-logo-brief" />
-                <p className="location-desc">{employmentType}</p>
-              </div>
-            </div>
-            <p className="package-desc">{packagePerAnnum}</p>
+              <p className="package-desc">{packagePerAnnum}</p>
+            </li>
           </div>
+
           <hr className="line" />
           <div className="description-container">
             <h1 className="desc-heading">Description</h1>

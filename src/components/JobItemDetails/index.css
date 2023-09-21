@@ -8,6 +8,9 @@
 .listing {
   list-style-type: none;
 }
+.dot_no {
+  list-style-type: none;
+}
 .full-job-item-container {
   display: flex;
   flex-direction: column;
